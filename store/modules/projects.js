@@ -4,17 +4,17 @@ export default {
     return {
       projects: [
         {
-          src: "http://rusheffect.eu5.net/",
+          src: "https://muvbed.github.io/rush-effect/",
           name: "Rush Effect",
           background: require("~/assets/images/fitness.png")
         },
         {
-          src: "http://sunrisehotel.eu5.net/",
+          src: "https://muvbed.github.io/sunrise-hotel/",
           name: "Sunrise Hotel",
           background: require("~/assets/images/hotel.png")
         },
         {
-          src: "http://aionsalvation.eu5.net/",
+          src: "https://muvbed.github.io/aion-salvation/",
           name: "Aion Salvation",
           background: require("~/assets/images/aion.png")
         }

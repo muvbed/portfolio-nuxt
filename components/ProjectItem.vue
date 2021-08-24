@@ -65,7 +65,6 @@ export default {
     background-color rgba(0,0,0,0.75)
     opacity 0
     visibility hidden
-    transform skew(-3deg, -3deg)
     transition .25s
 
     ~/:hover &
@@ -79,7 +78,7 @@ export default {
     box-shadow 0px 0px 2px 1px #D400EB
     opacity 0
     visibility hidden
-    transform translateX(-50%)
+    transform skew(-3deg, -3deg) translateX(-50%)
     transition .3s
 
     &:after
@@ -120,10 +119,11 @@ export default {
     border 0
     outline 0
     cursor url('~/assets/images/link.cur'), pointer
+    transform skew(-3deg, -3deg)
     transition .3s
 
     &:hover
-      transform scale(1.1)
+      transform skew(-3deg, -3deg) scale(1.1)
 
   &__btnIcon
     width 100%
