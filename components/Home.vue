@@ -100,7 +100,7 @@ export default {
     font-size 24px
     font-weight 100
     line-height 1.2
-    color #ddd
+    color #bbb
     text-shadow 5px 5px 2px #4C0054
     cursor url('~/assets/images/text.cur'), text
 

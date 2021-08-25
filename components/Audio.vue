@@ -36,17 +36,19 @@ export default {
   name: "Audio",
   data() {
     return {
-      audio: new Audio(
-        require("~/assets/Celldweller_-_It_Makes_No_Difference_Who_We_Are.mp3")
-      ),
+      track: "Celldweller_-_It_Makes_No_Difference_Who_We_Are.mp3",
+      audio: null,
       volume: 20,
       musicOn: false
     };
   },
   mounted() {
+    this.audio = new Audio(
+      require(`~/assets/${this.track}`)
+    )
     this.audio.volume = this.volume / 100;
     this.audio.loop = true;
-    this.$refs.name.textContent = this.audio.src.split("nuxt/")[1];
+    this.$refs.name.textContent = this.track;
   }
 };
 </script>
