@@ -11,6 +11,13 @@
  */
 
 
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+
 /*!
   * vue-router v3.5.2
   * (c) 2021 Evan You
@@ -28,10 +35,3 @@
  * (c) 2021 Evan You
  * @license MIT
  */
-
-
-/*
-object-assign
-(c) Sindre Sorhus
-@license MIT
-*/

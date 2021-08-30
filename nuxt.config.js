@@ -1,7 +1,7 @@
 export default {
-  mode: 'static',
+  mode: process.env.NODE_ENV !== "development" ? "static" : "dev",
   router: {
-    base: '/portfolio-nuxt/'
+    base: process.env.NODE_ENV !== "development" ? "/portfolio-nuxt/" : "/"
   },
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
@@ -49,7 +49,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     "@nuxtjs/eslint-module",
-    '@nuxtjs/svg-sprite'
+    "@nuxtjs/svg-sprite"
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -57,7 +57,7 @@ export default {
 
   svgSprite: {
     input: "~/assets/images/svg",
-    output: "~/assets/images/svg"
+    output: "~/assets/images/svg/sprite"
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
