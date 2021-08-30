@@ -1,8 +1,9 @@
 export default {
-  mode: process.env.NODE_ENV !== "development" ? "static" : "dev",
+  target: 'static',
   router: {
     base: process.env.NODE_ENV !== "development" ? "/portfolio-nuxt/" : "/"
   },
+
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
