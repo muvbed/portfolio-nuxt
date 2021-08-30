@@ -2,13 +2,12 @@ export default (ctx, inject) => {
   inject("ancScroller", arg => {
     var ancScrollerMin,
       ancScrollerCount,
-      ancScrollerStart = true,
       timeFlag = true;
 
     if (window.innerHeight > arg.height) {
       setTimeout(function() {
         ancScrollerAutoBinding();
-      }, 500);
+      }, 400);
     }
 
     for (var i = 0; i < arg.ancors.length; i++) {
@@ -22,7 +21,9 @@ export default (ctx, inject) => {
 
     window.addEventListener("resize", function() {
       if (window.innerHeight > arg.height) {
-        ancScrollerAutoBinding();
+        setTimeout(function() {
+          ancScrollerAutoBinding();
+        }, 400);
       } else {
         document.removeEventListener("wheel", ancScrollerWheelFunc, {
           passive: false
@@ -43,16 +44,7 @@ export default (ctx, inject) => {
         }
       }
 
-      if (ancScrollerStart) {
-        ancScrollerStart = false;
-
-        setTimeout(function() {
-          arg.ancors[ancScrollerCount].scrollIntoView({ behavior: "smooth" });
-        }, 500);
-      } else {
-        arg.ancors[ancScrollerCount].scrollIntoView({ behavior: "smooth" });
-      }
-
+      arg.ancors[ancScrollerCount].scrollIntoView({ behavior: "smooth" });
       document.addEventListener("wheel", ancScrollerWheelFunc, {
         passive: false
       });
@@ -80,7 +72,7 @@ export default (ctx, inject) => {
       if (!timeFlag) {
         setTimeout(function() {
           timeFlag = true;
-        }, 500);
+        }, 400);
       }
     }
   });
