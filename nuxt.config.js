@@ -25,7 +25,7 @@ export default {
           "Muvbed, разработка сайтов muvbed, frontend-developer muvbed, фронтенд-разработчик muvbed"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "favicon.ico" }],
     script: [
       {
         innerHTML: `
