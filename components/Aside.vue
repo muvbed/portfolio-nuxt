@@ -2,12 +2,13 @@
   <aside class="aside">
     <ul class="aside__list">
       <li
-        v-for="item in links"
-        :key="item.id"
+        v-for="link in links"
+        :key="link.id"
+        ref="links"
         class="aside__item"
-        :title="item.title"
+        :title="link.title"
       >
-        <svg-icon :name="item.icon" class="aside__icon" />
+        <svg-icon :name="link.icon" class="aside__icon" />
       </li>
     </ul>
   </aside>
@@ -50,17 +51,18 @@ export default {
   methods: {
     asideMarker() {
       const nodes = [".home", ".skills", ".projects", ".contacts"];
+      const links = this.$refs.links;
 
       nodes.forEach((node, index) => {
         if (
           pageYOffset + window.innerHeight / 4 >=
           document.querySelector(node).getBoundingClientRect().top + pageYOffset
         ) {
-          document.querySelectorAll(".aside__item").forEach(asideItem => {
-            asideItem.style.fill = "#EE1AFF";
+          links.forEach(link => {
+            link.style.fill = "#EE1AFF";
           });
 
-          document.querySelectorAll(".aside__item")[index].style.fill = "#FFF";
+          links[index].style.fill = "#FFF";
         }
       });
     }
